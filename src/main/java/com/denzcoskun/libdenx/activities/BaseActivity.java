@@ -39,6 +39,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResourceId());
         ButterKnife.bind(this);
+        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         onViewReady(savedInstanceState, getIntent());
     }
 
