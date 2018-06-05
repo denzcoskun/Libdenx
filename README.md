@@ -40,6 +40,10 @@ getJsonArray("Your Url", result -> {
     // result is your response array. You can use here.
  });
  ```
+ #### Check internet connection:
+ ```java
+  isNetworkConnected()
+ ```
 #### Show Toast Message:
 ```java
 showMessage(int Message);
