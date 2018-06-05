@@ -48,7 +48,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         //To be used by child activities
     }
 
-    public void showMassage(String message){
+    public void showMessage(String message){
         if(message != null){
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         }else {
@@ -56,8 +56,8 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         }
     }
 
-    public void showMassage(int message){
-        showMassage(getString(message));
+    public void showMessage(int message){
+        showMessage(getString(message));
     }
 
     public boolean isNetworkConnected(){
@@ -73,7 +73,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }, error -> showMassage(R.string.volley_error)));
+        }, error -> showMessage(R.string.volley_error)));
     }
 
     public <T> void getJsonArray(String url, VolleyCallBack<T> callBack){
@@ -84,7 +84,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, error -> showMassage(R.string.volley_error)));
+        }, error -> showMessage(R.string.volley_error)));
     }
 
 
