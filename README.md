@@ -52,16 +52,16 @@ showMessage(String Message);
  ```
 # How to use?
 
-This is not use alone project. You must use it like submodule.
+This is not use alone project. You must use it like **submodule**.
 
 ```git
 git submodule add https://github.com/denzcoskun/libdenx.git
 ```
-Add libdenx to Setting.gradle file
+Add libdenx to **Setting.gradle** file
 ```gradle
 include ':app', ':libdenx'
 ```
-Implement libdenx to Build.gradle file
+Implement libdenx to **Build.gradle** file
 ```gradle
 implementation project(path: ':libdenx')
 ```
