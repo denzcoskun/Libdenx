@@ -39,7 +39,6 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResourceId());
         ButterKnife.bind(this);
-        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         onViewReady(savedInstanceState, getIntent());
     }
 
@@ -96,6 +95,10 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
     public void onDestroy(){
         if(unbinder!= null){unbinder.unbind();}
         super.onDestroy();
+    }
+
+    public void noActionBarShadow(){
+        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
     }
 
     public void addBackButton(){
