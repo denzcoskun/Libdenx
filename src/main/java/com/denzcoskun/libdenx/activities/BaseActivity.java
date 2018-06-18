@@ -68,7 +68,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         ObjectMapper mapper = new ObjectMapper();
         queue.add(new JsonObjectRequest(Request.Method.GET, url, null, (JSONObject response) -> {
             try {
-                callBack.OnSuccess(mapper.readValue(response.toString(),responseModel));
+                callBack.onSuccess(mapper.readValue(response.toString(),responseModel));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -79,7 +79,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(new JsonArrayRequest(Request.Method.GET, url, null, (JSONArray response) -> {
             try {
-                callBack.OnSuccess((T) response);
+                callBack.onSuccess((T) response);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -116,7 +116,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
     }
 
     @Override
-    public void OnSuccess(BaseResponseModel result) {
+    public void onSuccess(BaseResponseModel result) {
 
     }
 

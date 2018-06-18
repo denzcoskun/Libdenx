@@ -51,7 +51,7 @@ abstract public class BaseFragment extends Fragment implements VolleyCallBack<Ba
         ObjectMapper mapper = new ObjectMapper();
         queue.add(new JsonObjectRequest(Request.Method.GET, url, null, (JSONObject response) -> {
             try {
-                callBack.OnSuccess(mapper.readValue(response.toString(),responseModel));
+                callBack.onSuccess(mapper.readValue(response.toString(),responseModel));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -63,7 +63,7 @@ abstract public class BaseFragment extends Fragment implements VolleyCallBack<Ba
         ObjectMapper mapper = new ObjectMapper();
         queue.add(new JsonArrayRequest(Request.Method.GET, url, null, (JSONArray response) -> {
             try {
-                callBack.OnSuccess((T) response);
+                callBack.onSuccess((T) response);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -87,7 +87,7 @@ abstract public class BaseFragment extends Fragment implements VolleyCallBack<Ba
     }
 
     @Override
-    public void OnSuccess(BaseResponseModel result) {
+    public void onSuccess(BaseResponseModel result) {
 
     }
 
