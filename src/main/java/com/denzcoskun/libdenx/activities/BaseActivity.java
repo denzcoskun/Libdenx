@@ -13,6 +13,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.libdenx.R;
 import com.denzcoskun.libdenx.interfaces.VolleyCallBack;
@@ -73,7 +74,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, error -> showMessage(R.string.volley_error)));
+        }, error -> callBack.onError(error.getMessage())));
     }
 
     public <T> void getJsonArray(String url, VolleyCallBack<T> callBack) {
@@ -85,6 +86,18 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
                 e.printStackTrace();
             }
         }, error -> showMessage(R.string.volley_error)));
+    }
+
+    public <T> void sendRequest(String url, VolleyCallBack<T> callBack){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(new StringRequest(Request.Method.GET, url, response -> {
+            try {
+                callBack.onSuccess((T) response);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }, error -> showMessage(R.string.volley_error)));
+
     }
 
     public void showAlertDialog(String title, String text, String buttonTitle, Context context) {
@@ -128,6 +141,10 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
 
     @Override
     public void onSuccess(BaseResponseModel result) {
+
+    }
+    @Override
+    public void onError(String error) {
 
     }
 

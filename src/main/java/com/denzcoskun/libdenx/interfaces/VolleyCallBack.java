@@ -5,4 +5,5 @@ package com.denzcoskun.libdenx.interfaces;
  */
 public interface VolleyCallBack<T> {
     public void onSuccess(T result);
+    public void onError(String error);
 }
