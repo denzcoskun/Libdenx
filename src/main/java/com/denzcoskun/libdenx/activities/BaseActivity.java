@@ -74,7 +74,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, error -> callBack.onError(error.getMessage())));
+        }, error -> callBack.onError()));
     }
 
     public <T> void getJsonArray(String url, VolleyCallBack<T> callBack) {
@@ -144,7 +144,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
 
     }
     @Override
-    public void onError(String error) {
+    public void onError() {
 
     }
 
