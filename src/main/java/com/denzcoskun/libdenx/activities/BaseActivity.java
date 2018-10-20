@@ -88,7 +88,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
         }, error -> showMessage(R.string.volley_error)));
     }
 
-    public <T> void sendRequest(String url, VolleyCallBack<T> callBack){
+    public <T> void sendRequest(String url, VolleyCallBack<T> callBack) {
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(new StringRequest(Request.Method.GET, url, response -> {
             try {
@@ -143,6 +143,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
     public void onSuccess(BaseResponseModel result) {
 
     }
+
     @Override
     public void onError() {
 
