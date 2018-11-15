@@ -1,4 +1,3 @@
-# libdenx
 ![libdenx](https://user-images.githubusercontent.com/15522554/40986568-37d32b00-68ef-11e8-809a-d5497bb1b430.png)
 
 Android base structure project. With this library you can write less code and develop faster.
