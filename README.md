@@ -66,13 +66,13 @@ implementation project(path: ':libdenx')
 ```
 #### Libraries used:
 ```gradle
-implementation 'com.google.code.gson:gson:2.8.2'
+implementation 'com.google.code.gson:gson:2.8.5'
 implementation 'com.jakewharton:butterknife:8.8.1'
 annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-implementation 'com.android.volley:volley:1.1.0'
-implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
-implementation 'com.fasterxml.jackson.core:jackson-core:2.8.5'
-implementation 'com.fasterxml.jackson.core:jackson-annotations:2.8.5' 
+implementation 'com.android.volley:volley:1.1.1'
+implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
+implementation 'com.fasterxml.jackson.core:jackson-core:2.9.7'
+implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.6'
 ```
 # License
 Copyright 2018 Deniz Coşkun
